@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  identity:
+    container_name: digitus
+    image: uguroban/udemymicroservice:digitus.1.0.1
+    restart: always
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5500:80"
+  identityDb:
+    container_name: digitusDb
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
